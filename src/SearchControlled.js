@@ -14,7 +14,7 @@ const keywords = [
   'redis',
 ];
 const style = {
-  margin: 36,
+  margin: 16,
 };
 
 export default class SearchControlled extends Component {
@@ -41,7 +41,8 @@ export default class SearchControlled extends Component {
   render() {
     return (
      
-        <MuiThemeProvider>
+        <MuiThemeProvider >
+      
          <div>
         <AutoComplete
           hintText="Type keywords, case insensitive"
@@ -51,6 +52,7 @@ export default class SearchControlled extends Component {
           dataSource={keywords}
           filter={(searchText, key) => (key.indexOf(searchText) !== -1)}
           openOnFocus={true}
+          style={{margin:'1em 25%'}}
         />
             <RaisedButton label="search" primary={true} style={style} onClick={this.onclickButton}/>
               </div>

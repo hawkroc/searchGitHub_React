@@ -13,7 +13,7 @@ class RepoList extends Component{
       loading: true,
       error: null,
       contentClass:{width:'40%',display: 'inline-block',margin:'1em'},
-      animation:css.zoomInUp,
+   
       data: null
     };
   };
