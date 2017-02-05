@@ -34,7 +34,7 @@ class RepoList extends Component{
       let repoList = repos.map((repo, index) => {
         return (
 
-               <Card  key={index} style={{width:'40%'}}>
+               <Card  key={index} style={{width:'40%',display: 'inline-block',margin:'8px'}}>
 
     <CardHeader
       title={repo.full_name}
