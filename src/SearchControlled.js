@@ -14,7 +14,7 @@ const keywords = [
   'redis',
 ];
 const style = {
-  margin: 16,
+  margin:'1em 3em 1em 28% '
 };
 
 export default class SearchControlled extends Component {
@@ -52,9 +52,9 @@ export default class SearchControlled extends Component {
           dataSource={keywords}
           filter={(searchText, key) => (key.indexOf(searchText) !== -1)}
           openOnFocus={true}
-          style={{margin:'1em 25%'}}
+          style={style}
         />
-            <RaisedButton label="search" primary={true} style={style} onClick={this.onclickButton}/>
+            <RaisedButton label="search" primary={true}  onClick={this.onclickButton}/>
               </div>
           </MuiThemeProvider>
     
