@@ -1,22 +1,25 @@
 
 import React, { Component } from 'react';
 import Chips from './Chips';
+import css from './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+
+
 class RepoList extends Component{
- 
  constructor(props, context) {
     super(props, context);
-
     this.state = {
       loading: true,
       error: null,
+      contentClass:{width:'40%',display: 'inline-block',margin:'1em'},
+      animation:css.zoomInUp,
       data: null
     };
   };
 
 
-  componentDidMount() {
+  componentDidMount = ()=> {
     this.props.promise.then(
       value => this.setState({loading: false, data: value}),
       error => this.setState({loading: false, error: error}));
@@ -34,16 +37,15 @@ class RepoList extends Component{
       let repoList = repos.map((repo, index) => {
         return (
 
-               <Card  key={index} style={{width:'40%',display: 'inline-block',margin:'8px'}}>
+               <Card  key={index}  
+                style={this.state.contentClass}>
 
     <CardHeader
       title={repo.full_name}
       actAsExpander={true}
       showExpandableButton={true}
     >
-<div>
 
-</div>
   <Chips stars={repo.stargazers_count} />
     </CardHeader>
     <CardActions>
@@ -59,13 +61,14 @@ class RepoList extends Component{
 
   </Card>
 
+
         );
       });
       return (
         <main>
           <h1>Most Popular  Projects in Github</h1>
           <MuiThemeProvider>
-          <ol>{repoList}</ol>
+          <ol className="zoomInUp">{repoList}</ol>
           </MuiThemeProvider>
         </main>
       );
