@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Chips from './Chips';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-
+import LinearProgress from 'material-ui/LinearProgress';
 class RepoList extends Component{
  constructor(props, context) {
     super(props, context);
@@ -31,7 +31,9 @@ this.setPromise(nextProps.promise);
   render() {
 
     if (this.state.loading) {
-      return <span>Loading...</span>;
+      return  <div>
+   <LinearProgress mode="indeterminate" />
+  </div>
     }
     else if (this.state.error !== null) {
       return <span>Error: {this.state.error.message}</span>;

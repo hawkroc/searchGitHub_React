@@ -9,7 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const AppBarIcon = () => (
 	   <MuiThemeProvider>
   <AppBar
-    title="Title"
+    title="gitHub search by Peng"
     iconClassNameRight="muidocs-icon-navigation-expand-more"
   >
 

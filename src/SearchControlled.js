@@ -15,7 +15,12 @@ const keywords = [
   'redis',
 ];
 const style = {
+   search:{
   margin:'1em 3em 1em 32% ',
+},
+button :{
+    color :'red',
+},
 };
 
 export default class SearchControlled extends Component {
@@ -68,9 +73,9 @@ this.updatePromise(getJSON(this.state.searchText,'stars'));
           dataSource={keywords}
           filter={(searchText, key) => (key.indexOf(searchText) !== -1)}
           openOnFocus={true}
-          style={style}
+          style={style.search}
         />
-            <RaisedButton label="search" primary={true}  onClick={this.onclickButton}/>
+            <RaisedButton  style={style.button} label="search" primary={true}  onClick={this.onclickButton}/>
               </div>
           </MuiThemeProvider>
     
