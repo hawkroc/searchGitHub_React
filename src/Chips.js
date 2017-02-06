@@ -21,22 +21,14 @@ function handleTouchTap() {
   //alert('You clicked the Chip.');
 }
 
-/**
- * Examples of Chips, using an image [Avatar](/#/components/font-icon), [Font Icon](/#/components/font-icon) Avatar,
- * [SVG Icon](/#/components/svg-icon) Avatar, "Letter" (string) Avatar, and with custom colors.
- *
- * Chips with the `onRequestDelete` property defined will display a delete icon.
- */
 export default class Chips extends React.Component {
   render() {
     return (
-      <div style={styles.wrapper}>
-
-       
+      <div style={styles.wrapper}>     
         <Chip onTouchTap={handleTouchTap} style={styles.chip}>
           <Avatar size={32}>
 
- <img src={Star} className="Star" alt=""  />
+ <img src={Star} alt="" className="Star"  />
       </Avatar>
       <div>
      {this.props.stars}

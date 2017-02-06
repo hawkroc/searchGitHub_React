@@ -41,9 +41,8 @@ this.setPromise(nextProps.promise);
       let repos = this.state.data.items;
       let repoList = repos.map((repo, index) => {
         return (
-
-               <Card  key={index}  
-                style={this.state.contentClass}>
+                 <div  key={index} style={this.state.contentClass}>
+               <Card>
 
     <CardHeader
       title={repo.full_name}
@@ -63,6 +62,7 @@ this.setPromise(nextProps.promise);
      {repo.description}
     </CardText>    
   </Card>
+  </div>
         );
       });
       return (
