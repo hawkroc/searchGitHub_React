@@ -54,10 +54,10 @@ this.setPromise(nextProps.promise);
   <Chips stars={repo.stargazers_count} />
     </CardHeader>
     <CardActions>
-     <a href={repo.html_url}>{repo.name}</a>
+     <a href={repo.html_url}>{repo.full_name}</a>
     </CardActions>
     <CardText expandable={true}>
-    <a href={repo.homepage}>{repo.name}</a>
+    <a href={repo.homepage}>{repo.full_name}</a>
      
      {repo.description}
     </CardText>    
