@@ -1,10 +1,8 @@
 import React from 'react';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
-//import FontIcon from 'material-ui/FontIcon';
 import Star from './../public/ic_star_black_18px.svg';
-//import SvgIconFace from 'material-ui/svg-icons/action/face';
-//import {blue300, indigo900} from 'material-ui/styles/colors';
+
 
 const styles = {
   chip: {

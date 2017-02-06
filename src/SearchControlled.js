@@ -15,7 +15,7 @@ const keywords = [
   'redis',
 ];
 const style = {
-  margin:'1em 3em 1em 28% ',
+  margin:'1em 3em 1em 32% ',
 };
 
 export default class SearchControlled extends Component {

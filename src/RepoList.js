@@ -47,6 +47,7 @@ this.setPromise(nextProps.promise);
     <CardHeader
       title={repo.full_name}
       actAsExpander={true}
+     avatar={repo.owner.avatar_url}
       showExpandableButton={true}
     >
 
@@ -63,6 +64,9 @@ this.setPromise(nextProps.promise);
      {repo.description}
     </CardText>    
   </Card>
+
+
+
         );
       });
       return (
