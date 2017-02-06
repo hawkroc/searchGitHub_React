@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppBarIcon from './AppBarIcon';
-import Search from './SearchControlled';
-import getJSON from './SysLoadJson';
-import RepoList from './RepoList';
+import App from './App.js';
 import './index.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-
-
-let promise=getJSON('react','stars');
 
 ReactDOM.render(
   <AppBarIcon />,
@@ -17,15 +12,9 @@ ReactDOM.render(
 );
 
 
-
 ReactDOM.render(
 
-  <Search />,
-  document.getElementById('search')
+  <App/>,
+  document.getElementById('test')
 );
 
-
-ReactDOM.render(
-  <RepoList promise={promise}/>,
-  document.getElementById('content')
-);

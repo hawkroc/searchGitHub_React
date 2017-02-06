@@ -29,11 +29,6 @@ function handleTouchTap() {
  * Chips with the `onRequestDelete` property defined will display a delete icon.
  */
 export default class Chips extends React.Component {
-constructor(props, context) {
-    super(props, context);
- 
-   //
-  };
   render() {
     return (
       <div style={styles.wrapper}>
@@ -42,7 +37,7 @@ constructor(props, context) {
         <Chip onTouchTap={handleTouchTap} style={styles.chip}>
           <Avatar size={32}>
 
- <img src={Star} className="Star" />
+ <img src={Star} className="Star" alt=""  />
       </Avatar>
       <div>
      {this.props.stars}

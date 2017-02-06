@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
+import getJSON from './SysLoadJson';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const keywords = [
   'javascript',
@@ -14,13 +15,15 @@ const keywords = [
   'redis',
 ];
 const style = {
-  margin:'1em 3em 1em 28% '
+  margin:'1em 3em 1em 28% ',
 };
 
 export default class SearchControlled extends Component {
   state = {
     searchText: '',
+    promise:{},
   };
+
 
   handleUpdateInput = (searchText) => {
     this.setState({
@@ -34,15 +37,28 @@ export default class SearchControlled extends Component {
     });
   };
 
+componentDidMount =()=>{
+
+this.props.changeItem(getJSON('java','stars'));
+
+}
+
+
   onclickButton = () => {
-    console.log(""+this.state.searchText);
+
+this.updatePromise(getJSON(this.state.searchText,'stars'));
+    this.props.changeItem(this.state.promise);
+  };
+
+  updatePromise(promise){
+ this.setState({
+      promise: promise,
+    });
   };
 
   render() {
-    return (
-     
-        <MuiThemeProvider >
-      
+    return (  
+        <MuiThemeProvider >   
          <div>
         <AutoComplete
           hintText="Type keywords, case insensitive"

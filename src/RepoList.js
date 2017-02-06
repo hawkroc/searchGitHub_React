@@ -1,10 +1,7 @@
-
 import React, { Component } from 'react';
 import Chips from './Chips';
-import css from './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-
 
 class RepoList extends Component{
  constructor(props, context) {
@@ -13,19 +10,26 @@ class RepoList extends Component{
       loading: true,
       error: null,
       contentClass:{width:'40%',display: 'inline-block',margin:'1em'},
-   
       data: null
     };
   };
 
+componentWillReceiveProps= (nextProps)=> {
 
-  componentDidMount = ()=> {
-    this.props.promise.then(
+this.setPromise(nextProps.promise);
+};
+  
+
+  setPromise(promise){
+
+  promise.then(
       value => this.setState({loading: false, data: value}),
       error => this.setState({loading: false, error: error}));
+
   };
 
   render() {
+
     if (this.state.loading) {
       return <span>Loading...</span>;
     }
@@ -58,10 +62,7 @@ class RepoList extends Component{
      
      {repo.description}
     </CardText>    
-
   </Card>
-
-
         );
       });
       return (
