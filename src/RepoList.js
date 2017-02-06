@@ -57,16 +57,11 @@ this.setPromise(nextProps.promise);
      <a href={repo.html_url}>{repo.name}</a>
     </CardActions>
     <CardText expandable={true}>
-
-
     <a href={repo.homepage}>{repo.name}</a>
      
      {repo.description}
     </CardText>    
   </Card>
-
-
-
         );
       });
       return (
