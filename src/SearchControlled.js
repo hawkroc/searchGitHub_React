@@ -48,18 +48,10 @@ this.props.changeItem(getJSON('java','stars'));
 
 }
 
-
   onclickButton = () => {
-
-this.updatePromise(getJSON(this.state.searchText,'stars'));
-    this.props.changeItem(this.state.promise);
+    this.props.changeItem(getJSON(this.state.searchText,'stars'));
   };
 
-  updatePromise(promise){
- this.setState({
-      promise: promise,
-    });
-  };
 
   render() {
     return (  

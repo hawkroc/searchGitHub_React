@@ -19,13 +19,12 @@ componentWillReceiveProps= (nextProps)=> {
 this.setPromise(nextProps.promise);
 };
   
-
   setPromise(promise){
 
   promise.then(
       value => this.setState({loading: false, data: value}),
       error => this.setState({loading: false, error: error}));
-
+  
   };
 
   render() {
