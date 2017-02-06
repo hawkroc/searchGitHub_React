@@ -46,6 +46,7 @@ this.setPromise(nextProps.promise);
 
     <CardHeader
       title={repo.full_name}
+      subtitle={repo.language}
       actAsExpander={true}
      avatar={repo.owner.avatar_url}
       showExpandableButton={true}
@@ -55,10 +56,9 @@ this.setPromise(nextProps.promise);
     </CardHeader>
     <CardActions>
      <a href={repo.html_url}>{repo.full_name}</a>
+
     </CardActions>
     <CardText expandable={true}>
-    <a href={repo.homepage}>{repo.full_name}</a>
-     
      {repo.description}
     </CardText>    
   </Card>
