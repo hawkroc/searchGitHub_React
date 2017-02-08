@@ -50,6 +50,10 @@ this.props.changeItem(getJSON('java','stars'));
 
   onclickButton = () => {
     this.props.changeItem(getJSON(this.state.searchText,'stars'));
+    //const scr = this.refs.scr.refs.RaisedButton;
+    //scr.focus();
+   this.refs.scr.focus();   // Boom! Focused!
+ 
   };
 
 
@@ -58,6 +62,7 @@ this.props.changeItem(getJSON('java','stars'));
         <MuiThemeProvider >   
          <div>
         <AutoComplete
+          ref="scr"
           hintText="Type keywords, case insensitive"
           searchText={this.state.searchText}
           onUpdateInput={this.handleUpdateInput}
@@ -67,7 +72,7 @@ this.props.changeItem(getJSON('java','stars'));
           openOnFocus={true}
           style={style.search}
         />
-            <RaisedButton  style={style.button} label="search" primary={true}  onClick={this.onclickButton}/>
+            <RaisedButton    style={style.button} label="search" primary={true}  onClick={this.onclickButton}/>
               </div>
           </MuiThemeProvider>
     
