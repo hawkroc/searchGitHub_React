@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
 import getJSON from './SysLoadJson';
+import AutoAffix from 'react-overlays/lib/AutoAffix';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const keywords = [
   'javascript',
@@ -59,6 +60,8 @@ this.props.changeItem(getJSON('java','stars'));
 
   render() {
     return (  
+      <AutoAffix>
+      <div>
         <MuiThemeProvider >   
          <div>
         <AutoComplete
@@ -75,6 +78,8 @@ this.props.changeItem(getJSON('java','stars'));
             <RaisedButton    style={style.button} label="search" primary={true}  onClick={this.onclickButton}/>
               </div>
           </MuiThemeProvider>
+          </div>
+          </AutoAffix>
     
     );
   }
