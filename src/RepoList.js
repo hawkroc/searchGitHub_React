@@ -10,6 +10,7 @@ class RepoList extends Component{
       loading: true,
       error: null,
       contentClass:{width:'40%',display: 'inline-block',margin:'1em'},
+      cardStyle:{wordWrap:'wordBreak'},
       data: null
     };
   };
@@ -20,7 +21,7 @@ this.setPromise(nextProps.promise);
 };
   
   setPromise(promise){
-
+  // console.log('test promise++++++++++++==');
   promise.then(
       value => this.setState({loading: false, data: value}),
       error => this.setState({loading: false, error: error}));
@@ -39,17 +40,19 @@ this.setPromise(nextProps.promise);
     }
     else {
       let repos = this.state.data.items;
+    //  console.log(repos);
       let repoList = repos.map((repo, index) => {
         return (
                  <div  key={index} style={this.state.contentClass}>
                <Card>
 
     <CardHeader
-      title={repo.full_name}
+      title={repo.name}
       subtitle={repo.language}
       actAsExpander={true}
      avatar={repo.owner.avatar_url}
       showExpandableButton={true}
+       style={this.state.cardStyle}
     >
 
   <Chips stars={repo.stargazers_count} />

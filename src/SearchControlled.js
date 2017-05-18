@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
-import getJSON from './SysLoadJson';
+//import getJSON2 from './SysLoadJson';
+import getJSON from './Fetchjson';
+                      
 import AutoAffix from 'react-overlays/lib/AutoAffix';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const keywords = [
@@ -44,7 +46,7 @@ export default class SearchControlled extends Component {
   };
 
 componentDidMount =()=>{
-
+//getJSON2('java','stars');
 this.props.changeItem(getJSON('java','stars'));
 
 }
@@ -75,7 +77,7 @@ this.props.changeItem(getJSON('java','stars'));
           openOnFocus={true}
           style={style.search}
         />
-            <RaisedButton    style={style.button} label="search" primary={true}  onClick={this.onclickButton}/>
+            <RaisedButton  style={style.button} label="search" primary={true}  onClick={this.onclickButton}/>
               </div>
           </MuiThemeProvider>
           </div>

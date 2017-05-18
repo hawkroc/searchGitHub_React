@@ -13,12 +13,14 @@ const getJSON = (q,s) => {
     client.setRequestHeader("Accept", "application/json");
     client.send();
 
+
     function handler() {
       if (this.readyState !== 4) {
         return;
       }
       if (this.status === 200) {
         resolve(this.response);
+        console.log(this.response);
       } else {
         reject(new Error(this.statusText));
       }
@@ -26,6 +28,10 @@ const getJSON = (q,s) => {
   });
 
   return promise;
+ //return fetch(final);
 };
+
+
+
 
 export default getJSON;
